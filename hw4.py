@@ -17,11 +17,14 @@ class Brother:
         print('amir eat')
 
 class Son(Mother, Father, Grandma, Brother):
-    def method2(self):
-        print('amir like eat')
+    def __init__(self, name, age):
+        Mother.__init__(self, name)
+        Father.__init__(self, age)
 
-a = Son('Vladick')
+a = Son('Vladick', 11)
+print(a)
 a.method()
+a.method2()
 
 with open('txt.file', 'w', encoding='utf-8') as file:
     file.write('команды гита: 1)git init, 2)git add, 3)git commit\n'
